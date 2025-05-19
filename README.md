@@ -23,30 +23,30 @@ The algorithmic workflow is :
             +---------------------+  
                       |  
             +---------------------+  
-         |->|  Parameterization   |  
-         |  +---------------------+  
-         |            |    
-         |  +--------------------------+  
-         |  |  Find gᵢ (Geometry)      |  
-         |  +--------------------------+  
-         |            |  
-         |  +--------------------------+  
-         |  |  Compute Nᵢ (Noise)      |  
-         |  +--------------------------+  
-         |            |   
- (loop)  |  +-------------------------------+  
-         |  |  Update xᵢ (Search Step)      |  
-         |  +-------------------------------+  
-         |            |             
-         |  +------------------------------------+  
-         |  |  Optimization Criterion met?       |  
-         |  +------------------------------------+  
-         |            |             |  
-         |         No |             | Yes                 
-         |       +----------+    +-----+
-         |       | (new xi) |    | End |       
-         |       +----------+    +-----+
-         |            |              
-         --------------              
+        |-> |  Parameterization   |  
+        |   +---------------------+  
+        |             |    
+        |   +--------------------------+  
+        |   |  Find gᵢ (Geometry)      |  
+        |   +--------------------------+  
+        |             |  
+        |   +--------------------------+  
+        |   |  Compute Nᵢ (Noise)      |  
+        |   +--------------------------+  
+        |             |   
+(loop)  |   +-------------------------------+  
+        |   |  Update xᵢ (Search Step)      |  
+        |   +-------------------------------+  
+        |             |             
+        |   +------------------------------------+  
+        |   |  Optimization Criterion met?       |  
+        |   +------------------------------------+  
+        |             |             |  
+        |          No |             | Yes                 
+        |        +----------+    +-----+
+        |        | (new xi) |    | End |       
+        |        +----------+    +-----+
+        |             |              
+        --------------              
 ```
-The **optimization algorithm** that is used in this pproject is the implementation of **Particle Swarm Optimization (PSO)**, a metaheuristic algorithm. More details of the implementation can be found in [pyswarms](https://pypi.org/project/pyswarms/)
+The **optimization algorithm** that is used in this project is the implementation of **Particle Swarm Optimization (PSO)**, a metaheuristic algorithm. More details of the implementation can be found in [pyswarms](https://pypi.org/project/pyswarms/)
