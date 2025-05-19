@@ -17,7 +17,7 @@ More detail on the problem can be found on the diploma thesis on [this](https://
 In order to use an optimization algorithm we want to find a description of the geometry in the form of g(xi), where xi: design variables , g: output geometry shape of airfoil and then connect the geometry g with the produced noise from the wind turbine N, so we finally have N(g(xi)) that has to be minimun, of course we do not have an analytical form of N but we can compute it arithmetical using the in-house solver. The problem is unbound so we will reach solution inside specified limits of the initial geometry that we must optimize.
 
 The algorithmic workflow is :
-
+```
             +---------------------+  
             |  Initialize xᵢ      |  
             +---------------------+  
@@ -47,5 +47,5 @@ The algorithmic workflow is :
          |   (new xi)     +-----+  
          |             |            | End |  
          --------------            +-----+  
-
+```
 The **optimization algorithm** that is used in this pproject is the implementation of **Particle Swarm Optimization (PSO)**, a metaheuristic algorithm. More details of the implementation can be found in [pyswarms](https://pypi.org/project/pyswarms/)
