@@ -18,35 +18,36 @@ In order to use an optimization algorithm we want to find a description of the g
 
 The algorithmic workflow is :
 ```
-            +----------------+  
-            |  Initialize xᵢ |  
-            +----------------+  
-                      |  
-            +--------------------+  
-        |-> |  Parameterization  |  
-        |   +--------------------+  
-        |             |    
-        |   +----------------------+  
-        |   |  Find gᵢ (Geometry)  |  
-        |   +----------------------+  
-        |             |  
-        |   +----------------------+  
-        |   |  Compute Nᵢ (Noise)  |  
-        |   +----------------------+  
-        |             |   
-(loop)  |   +--------------------------+  
-        |   |  Update xᵢ(Search Step)  |  
-        |   +--------------------------+  
-        |             |             
-        |   +-------------------------------+  
-        |   |  Optimization Criterion met?  |  
-        |   +-------------------------------+  
-        |             |             |  
-        |          No |             | Yes                 
-        |        +----------+    +-----+
-        |        | (new xi) |    | End |       
-        |        +----------+    +-----+
-        |             |              
-        --------------              
+                                                   +----------------+  
+                                                   |  Initialize xᵢ |  
+                                                   +----------------+  
+                                                             |  
+                                                   +--------------------+  
+                                               |-> |  Parameterization  |  
+                                               |   +--------------------+  
+                                               |             |    
+                                               |   +----------------------+  
+                                               |   |  Find gᵢ (Geometry)  |  
+                                               |   +----------------------+  
+                                               |             |  
+                                               |   +----------------------+  
+                                               |   |  Compute Nᵢ (Noise)  |  
+                                               |   +----------------------+  
+                                               |             |   
+                                       (loop)  |   +--------------------------+  
+                                               |   |  Update xᵢ(Search Step)  |  
+                                               |   +--------------------------+  
+                                               |             |             
+                                               |   +-------------------------------+  
+                                               |   |  Optimization Criterion met?  |  
+                                               |   +-------------------------------+  
+                                               |             |             |  
+                                               |          No |             | Yes                 
+                                               |        +----------+    +-----+
+                                               |        | (new xi) |    | End |       
+                                               |        +----------+    +-----+
+                                               |             |              
+                                               |_____________|              
 ```
 The **optimization algorithm** that is used in this project is the implementation of **Particle Swarm Optimization (PSO)**, a metaheuristic algorithm. More details of the implementation can be found in [pyswarms](https://pypi.org/project/pyswarms/)
+
