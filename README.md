@@ -1,6 +1,6 @@
 # Dthesis
 
-This is the main repo for my diploma thesis code(2022). The code used for an optimization problem, the workflow is very helpfull as it can be used in general for any optimization problem.
+This is the main repo for my diploma thesis code(2022). The code used for an optimization problem, the workflow is very helpfull as it can be used in general for any optimization problem. There are two parts of the thesis **optimization process** were we use the physical solver together with an optimizer and **machine learning regression** were we use the physical solver results in order to train a machine learnign algorithm and check if we can accurately replace the physical solver in the specified domain!
 
 # Problem Description
 The noise emissions are considered a main issue in the operation of a Wind Turbine. Noise is coming from the interaction of the wingsof the wind turbine with the moving airflow. A great part of this noise is dependent on the wing's **airfoil shape**, here in this thesis we will **try to find an airfoil shape that minimizes noise emissions**. 
@@ -51,3 +51,32 @@ The algorithmic workflow is :
 ```
 The **optimization algorithm** that is used in this project is the implementation of **Particle Swarm Optimization (PSO)**, a metaheuristic algorithm. More details of the implementation can be found in [pyswarms](https://pypi.org/project/pyswarms/)
 
+# Machine Learning Workflow
+We used 3 regression models in the process, 2 linear regressors(Linear regressor and Lasso) and one non-linear Neural Network. The linear models will tell us 1) can we use a (relative) easy linear relationship between design variables and output and to predict the result 2)What variables play the most crusial role in this process(Lasso example). The NN as it is approved as a general approximator is expected to have better results, and it finally has(over 98%!). 
+
+The workflow is :
+```
+                                         +-------------------------------------------------+  
+                                         | Collect Data from optimizaion Process (xᵢ, Nᵢ)  |
+                                         +-------------------------------------------------+  
+                                                   |  
+                                         +----------------------------------------------------------+  
+                                         |  Pick model using sklearn library(i.e Linear Regressor)  |  
+                                         +----------------------------------------------------------+  
+                                                   |    
+                                         +--------------------------------+  
+                                         |  Set up model hyperparameters  |  
+                                         +--------------------------------+  
+                                                   |  
+                                         +---------------------------------+  
+                                         |  Split to 80/20 train-test set  |  
+                                         +---------------------------------+  
+                                                   |   
+                                         +---------------------+  
+                                         |  Fit on train Data  |  
+                                         +---------------------+  
+                                                   |   
+                                         +--------------------------+  
+                                         |  Evaluate on  test Data  |  
+                                         +--------------------------+  
+```
