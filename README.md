@@ -2,6 +2,8 @@
 
 This is the main repo for my diploma thesis code(2022). The code used for an optimization problem, the workflow is very helpfull as it can be used in general for any optimization problem. There are two parts of the thesis **optimization process** were we use the physical solver together with an optimizer and **machine learning regression** were we use the physical solver results in order to train a machine learnign algorithm and check if we can accurately replace the physical solver in the specified domain!
 
+From an initial airfoil distribution(Xi, Yi points) taken from DTU university(ffas241) we first interpolate the data using the **PARSEC parametarization** technique to get the function definition and to get parsec coefficients. These coefficients are our design variables - variables that controlling the shape of the airfoil
+
 # Problem Description
 The noise emissions are considered a main issue in the operation of a Wind Turbine. Noise is coming from the interaction of the wingsof the wind turbine with the moving airflow. A great part of this noise is dependent on the wing's **airfoil shape**, here in this thesis we will **try to find an airfoil shape that minimizes noise emissions**. 
 
